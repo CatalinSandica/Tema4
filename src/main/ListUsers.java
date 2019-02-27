@@ -33,7 +33,7 @@ public class ListUsers extends HttpServlet {
 	      // Set response content type
 	      response.setContentType("text/html");
 	      PrintWriter out = response.getWriter();
-	      String title = "Database Result";
+	      String title = "Users List";
 	      
 	      String docType =
 	         "<!doctype html public \"-//w3c//dtd html 4.0 " + "transitional//en\">\n";
@@ -53,41 +53,25 @@ public class ListUsers extends HttpServlet {
 
 	         // Extract data from result set
 	         while(rs.next()){
-	            
+	            String id = rs.getString("userID");
 	            String username = rs.getString("userName");
 	            String password = rs.getString("userPass");
 
 	            //Display values
-	            
+	            out.println("UserID: " + id + "<br>");
 	            out.println("Username: " + username + "<br>");
 	            out.println("Password: " + password + "<br><br>");
 	         }
 	         out.println("</body></html>");
 
-	         // Clean-up environment
-	         rs.close();
-	         stmt.close();
-	         conn.close();
+	         
 	      } catch(SQLException se) {
 	         //Handle errors for JDBC
 	         se.printStackTrace();
 	      } catch(Exception e) {
 	         //Handle errors for Class.forName
 	         e.printStackTrace();
-	      } finally {
-	         //finally block used to close resources
-	         try {
-	            if(stmt!=null)
-	               stmt.close();
-	         } catch(SQLException se2) {
-	         } // nothing we can do
-	         try {
-	            if(conn!=null)
-	            conn.close();
-	         } catch(SQLException se) {
-	            se.printStackTrace();
-	         } //end finally try
-	      } //end try
+	      } 
 	   
 	}
 

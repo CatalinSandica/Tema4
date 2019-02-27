@@ -68,12 +68,21 @@ public class DBConnection {
 	}
 	
 	public String getUsernameByID(int id, String dbTable) throws Exception {
-		prepStatement = connection.prepareStatement("SELECT userName FROM " + dbTable +" WHERE userID = ?");
+		prepStatement = connection.prepareStatement("SELECT * FROM " + dbTable +" WHERE userID = ?");
 		prepStatement.setInt(1, id);
 		resultSet = prepStatement.executeQuery();
 		resultSet.next();
 		usr.setPassword(resultSet.getString("userName"));
 		return usr.getPassword();
+	}
+	
+	public ResultSet getValuesByID(int id, String dbTable) throws Exception {
+		prepStatement = connection.prepareStatement("SELECT * FROM " + dbTable +" WHERE userID = ?");
+		prepStatement.setInt(1, id);
+		resultSet = prepStatement.executeQuery();
+		resultSet.next();
+		usr.setPassword(resultSet.getString("userName"));
+		return resultSet;
 	}
 	
 	public void insertValuesInDB (String username, String password, String dbTable) throws Exception{

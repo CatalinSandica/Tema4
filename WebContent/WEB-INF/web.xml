@@ -17,7 +17,6 @@
     <servlet-name>ListUsers</servlet-name>
     <url-pattern>/users</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>UserJson</servlet-name>
     <servlet-class>main.UserJson</servlet-class>
@@ -26,7 +25,6 @@
     <servlet-name>UserJson</servlet-name>
     <url-pattern>/json</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>UserForm</servlet-name>
     <servlet-class>main.UserForm</servlet-class>
@@ -34,5 +32,29 @@
   <servlet-mapping>
     <servlet-name>UserForm</servlet-name>
     <url-pattern>/</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>DeleteUser</servlet-name>
+    <servlet-class>main.DeleteUser</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteUser</servlet-name>
+    <url-pattern>/delete</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>UpdateUser</servlet-name>
+    <servlet-class>main.UpdateUser</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdateUser</servlet-name>
+    <url-pattern>/update</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>FindUser</servlet-name>
+    <servlet-class>main.FindUser</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FindUser</servlet-name>
+    <url-pattern>/find</url-pattern>
   </servlet-mapping>
 </web-app>
