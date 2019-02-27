@@ -9,13 +9,30 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
-  
   <servlet>
-  	<servlet-name>WebserverT4</servlet-name>
-  	<servlet-class>main.WebserverT4</servlet-class>
+    <servlet-name>ListUsers</servlet-name>
+    <servlet-class>main.ListUsers</servlet-class>
   </servlet>
   <servlet-mapping>
-  	<servlet-name>WebserverT4</servlet-name>
-  	<url-pattern>/api</url-pattern>
+    <servlet-name>ListUsers</servlet-name>
+    <url-pattern>/users</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>UserJson</servlet-name>
+    <servlet-class>main.UserJson</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserJson</servlet-name>
+    <url-pattern>/json</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>UserForm</servlet-name>
+    <servlet-class>main.UserForm</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserForm</servlet-name>
+    <url-pattern>/</url-pattern>
   </servlet-mapping>
 </web-app>
